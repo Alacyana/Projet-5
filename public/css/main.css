@@ -1,0 +1,53 @@
+body
+{
+	margin: 0px;
+	background-color: rgb(249, 249, 249);
+	font-family: arial;
+}
+
+.hide
+{
+	display: none;
+}
+
+.warning_border
+{
+	border-color: rgb(226, 56, 56)!important;
+}
+
+.warning_background
+{
+	background-color: rgb(226, 56, 56);
+	color: white;
+	padding: 0px 10px;
+	border-style: none solid;
+}
+
+.success_border
+{
+	border-color: rgb(86, 243, 143)!important;
+}
+
+.success_background
+{
+	background-color: rgb(60, 162, 97);
+	color: white;
+	padding: 0px 10px;
+	border-style: none solid;
+}
+
+#block_page 
+{
+    margin-top: 50px;
+    margin-left: 200px;
+    padding: 10px;
+}
+
+.index_1
+{
+	z-index: 1;
+}
+.index_3
+{
+	z-index: 3;
+}

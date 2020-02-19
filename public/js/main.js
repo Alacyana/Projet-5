@@ -1,0 +1,2 @@
+navigation.init();
+profil.init();

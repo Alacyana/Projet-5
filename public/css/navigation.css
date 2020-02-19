@@ -1,0 +1,150 @@
+.navs
+{
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.7);
+	color: white;
+}
+
+#nav_top
+{
+	z-index: 4;
+	width: 100%;
+    height: 50px;
+}
+
+#nav_left
+{
+	margin-top: 50px;
+	width: 200px;
+    height: 100%;
+}
+
+.blocks_logs_css
+{
+	text-align: center;
+}
+	
+.btns_login
+{
+	display: block;
+	background-color: rgba(0, 85, 125, 0.7);
+	border-radius: 10px;
+	padding: 10px 0px;
+	box-shadow: 0px 0px 7px 1px inset rgba(0, 0, 0, 1);
+	cursor: pointer;
+	color: #bdeaff;
+	font-weight: bold;
+}
+
+#register
+{
+	width: 50%;
+	font-size: 0.9em;
+	margin: 0% 25%;
+	margin-bottom: 5px;
+}
+
+#login
+{
+	width: 96%;
+	font-size: 1.5em;
+	margin: 0% 2%;
+	margin-bottom: 5px;
+}
+	
+#login:hover, #register:hover
+{
+	color: white;
+	box-shadow: 0px 0px 12px 2px inset rgba(0, 0, 0, 1);
+}
+
+#login:active, #register:active
+{
+	box-shadow: 0px 0px 21px 4px inset rgba(0, 0, 0, 1);
+}
+
+.champs_css
+{
+	background-color: #fbeddb;
+    width: calc(80% - 24px);
+    display: block;
+    height: 20px;
+    font-size: 1em;
+    padding: 5px 10px;
+    margin-left: 10%;
+    border: 2px solid #e0d1bd;
+    border-radius: 20px;
+	outline-style: none;
+}
+
+.btns_submit
+{
+	background-color: rgba(29, 199, 133, 0.7);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 0px 7px 1px inset rgba(0, 0, 0, 1);
+    cursor: pointer;
+    color: rgba(249, 249, 249, 0.7);
+    font-weight: bold;
+    border: none;
+    font-size: 0.9em;
+	outline-style: none;
+}
+
+.btns_submit:hover
+{
+	box-shadow: 0px 0px 12px 2px inset rgba(0, 0, 0, 1);
+}
+
+.btns_submit:active
+{
+	box-shadow: 0px 0px 21px 4px inset rgba(0, 0, 0, 1);
+}
+
+#avatar_nav_left
+{
+	width: 100%;
+	text-align: center;
+}
+
+	#avatar_nav_left img
+	{
+		width: 100px;
+	}
+
+#disconnection
+{
+	display: block;
+    background-color: rgba(202, 24, 0, 0.7);
+    border-radius: 10px;
+    padding: 10px 0px;
+    box-shadow: 0px 0px 7px 1px inset rgba(0, 0, 0, 1);
+    cursor: pointer;
+    color: rgb(222, 153, 144);
+    font-weight: bold;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    font-size: 1em;
+}
+
+#disconnection:hover
+{
+	box-shadow: 0px 0px 12px 2px inset rgba(0, 0, 0, 1);
+	color: white;
+}
+
+#disconnection:active
+{
+	box-shadow: 0px 0px 21px 4px inset rgba(0, 0, 0, 1);
+}
+
+#mdp_forgot
+{
+	display: block;
+	text-align: center;
+	margin: 10px 0px;
+	padding: 10px 5px;
+	cursor: pointer;
+	color: #85d2ff;
+}

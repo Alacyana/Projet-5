@@ -1,0 +1,87 @@
+
+.area_list
+{
+	display: inline-block;
+    width: 100%;
+	vertical-align: top;
+}
+	.area_list a 
+	{
+		text-decoration: none;
+		color: black;
+	}
+	
+	#area_list_spaces 
+	{
+		
+	}
+		.list_spaces 
+		{
+			background-color: aliceblue;
+			margin: 10px;
+			padding: 10px;
+		}
+		
+			.pseudo_spaces 
+			{
+				font-weight: bold;
+				display: block;
+			}
+			
+			.description_spaces 
+			{
+				font-style: italic;
+			}
+		
+	#area_list_last_posts
+	{
+	   
+	}
+	
+		.list_posts 
+		{
+			background-color: antiquewhite;
+			padding: 10px;
+			margin: 10px;
+		}
+			
+			
+			.title_post 
+			{
+				font-size: 1.2em;
+				font-weight: bold;
+				display: block;
+			}
+			
+			.subtitle_post 
+			{
+				font-style: italic;
+				display: block;
+			}
+			
+			.pseudo_post 
+			{
+				font-weight: bold;
+				display: inline-block;
+				border-top: solid 1px;
+				margin-top: 10px;
+				padding: 10px;
+			}
+			
+			
+@media (min-width:768px)
+{
+	
+}
+@media (min-width:992px)
+{
+	.area_list
+	{
+		width: 49%;
+	}
+}
+@media (min-width:1200px)
+{
+	
+}			
+			

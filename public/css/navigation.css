@@ -1,7 +1,7 @@
 .navs
 {
 	position: fixed;
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(0, 0, 0, 0.8);
 	color: white;
 }
 
@@ -12,12 +12,29 @@
     height: 50px;
 }
 
+	.nav_icons 
+	{
+		font-size: 3em;
+		margin-left: 10px;
+		cursor: pointer;
+		font-weight: bold;
+	}
+
 #nav_left
 {
+	display: none;
 	margin-top: 50px;
-	width: 200px;
+	width: 100%;
     height: 100%;
 }
+
+	#close_nav_left 
+	{
+		display: block;
+		text-align: end;
+		font-size: 2em;
+		margin: 10px 0px;
+	}
 
 .blocks_logs_css
 {
@@ -148,3 +165,21 @@
 	cursor: pointer;
 	color: #85d2ff;
 }
+
+
+@media (min-width:768px)
+{
+	
+}
+@media (min-width:992px)
+{
+	#nav_left
+	{
+		width: 200px;
+	}
+}
+@media (min-width:1200px)
+{
+	
+}
+

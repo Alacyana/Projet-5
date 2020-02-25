@@ -8,13 +8,28 @@
 		<link rel="stylesheet" href="public/css/main.css" />
 		<link rel="stylesheet" href="public/css/navigation.css" />
 		<link rel="stylesheet" href="public/css/profil.css" />
+		<link rel="stylesheet" href="public/css/space.css" />
+		<link rel="stylesheet" href="public/css/post.css" />
+		<link rel="stylesheet" href="public/css/home.css" />
 		<title>Site de lecture</title>
 	</head>
 	<body>
 		<nav>
 			<div id="nav_top" class="navs">
+				<span id="open_nav_left" class="material-icons nav_icons">menu</span>
+				<?php 
+				if (isset($_SESSION['id']))
+				{
+				?>
+				<a href="http://lecture.nexus-archeage.fr/?action=space&user=<?php echo sha1('FrtVL/K.J?'.$_SESSION["id"].'g65s4d'); ?>">
+					<span id="my_space" class="material-icons nav_icons">house</span>
+				</a>	
+				<?php				
+				}
+				?>
 			</div>
 			<div id="nav_left" class="navs">
+				<span id="close_nav_left" class="material-icons nav_icons">clear</span>				
 				<?php 
 				if (isset($_SESSION['id']))
 				{

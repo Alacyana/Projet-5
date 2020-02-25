@@ -1,7 +1,7 @@
 body
 {
 	margin: 0px;
-	background-color: rgb(249, 249, 249);
+	background-color: rgb(120, 155, 171);
 	font-family: arial;
 }
 
@@ -39,7 +39,6 @@ body
 #block_page 
 {
     margin-top: 50px;
-    margin-left: 200px;
     padding: 10px;
 }
 
@@ -50,4 +49,19 @@ body
 .index_3
 {
 	z-index: 3;
+}
+
+
+
+@media (min-width:768px)
+{
+	
+}
+@media (min-width:992px)
+{
+
+}
+@media (min-width:1200px)
+{
+	
 }

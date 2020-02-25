@@ -3,6 +3,8 @@ require_once("config.php");
 require_once('controller/MemberAreaController.php');
 require_once('controller/HomeController.php');
 require_once('controller/ProfilController.php');
+require_once('controller/SpaceController.php');
+require_once('controller/PostController.php');
 
 	if (isset($_GET['action']))
 	{
@@ -60,10 +62,34 @@ require_once('controller/ProfilController.php');
 				$profilController = new \Projet\ProfilController\ProfilController();
 				$profilController->updateMdpProfil(); 
 				break;
-			/*case 'add_img':
-				$profilController = new \Projet\ProfilController\ProfilController();
-				$profilController->addImg(); 
-				break;*/
+			case 'space' :
+				$spaceController = new \Projet\SpaceController\SpaceController();
+				$spaceController->space(); 
+				break;
+			case 'descriptionUpdate' :
+				$spaceController = new \Projet\SpaceController\SpaceController();
+				$spaceController->descriptionUpdate(); 
+				break;
+			case 'addPostSpace' :
+				$spaceController = new \Projet\SpaceController\SpaceController();
+				$spaceController->addPostSpace(); 
+				break;
+			case 'deletePost' :
+				$spaceController = new \Projet\SpaceController\SpaceController();
+				$spaceController->deletePost(); 
+				break;	
+			case 'post' :
+				$postController = new \Projet\PostController\PostController();
+				$postController->post(); 
+				break;
+			case 'modifyPostSpace' :
+				$postController = new \Projet\PostController\PostController();
+				$postController->modifyPost(); 
+				break;
+			case 'addCommOnPostSpace' :
+				$postController = new \Projet\PostController\PostController();
+				$postController->addComment(); 
+				break;
 		}
 	}
 	else

@@ -1,5 +1,7 @@
 const navigation =
 {
+	btnOpenNavLeft : $("#open_nav_left"),
+	btnCloseNavLeft : $("#close_nav_left"),
 	registerForm : $("#register_form"),	
 	loginForm : $("#login_form"),
 	btnRegister : $("#register"),
@@ -17,6 +19,8 @@ const navigation =
 	
 	init()
 	{		
+		$(this.btnOpenNavLeft).on("click", this.openNavLeft.bind(this));
+		$(this.btnCloseNavLeft).on("click", this.closeNavLeft.bind(this));
 		$(this.btnRegister).on("click", this.register.bind(this));
 		$(this.btnConnexion).on("click", this.login.bind(this));
 		$(this.btnRegisterSubmit).on("click", this.registerSubmit.bind(this));
@@ -29,6 +33,18 @@ const navigation =
 		this.mdpUpdateForm();
 	},
 	
+	openNavLeft()
+	{
+		$('#nav_left').show();
+		$('#block_page').css("marginLeft", "200px");
+	},
+	
+	closeNavLeft()
+	{
+		$('#nav_left').hide();
+		$('#block_page').css("marginLeft", "0px");
+	},
+
 	register()
 	{	
 		$(this.loginForm).hide();

@@ -8,10 +8,14 @@ class MemberController
 {
 	public function register()
 	{
-		$username = $_POST['data_username'];
-		$mail = $_POST['data_mail'];
-		$mdp = $_POST['data_mdp'];
-		$confirm_mdp = $_POST['data_confirm'];
+		$data_username = $_POST['data_username'];
+		$data_mail = $_POST['data_mail'];
+		$data_mdp = $_POST['data_mdp'];
+		$data_confirm_mdp = $_POST['data_confirm'];
+		$username = trim($data_username);
+		$mail = trim($data_mail);
+		$mdp = trim($data_mdp);
+		$confirm_mdp = trim($data_mdp);
 		
 		if ((strlen($username) > 3) /*&& (preg_match(/^(([a-z0-9!$%&\'+/=?^_`{|}~-]+.?)[a-z0-9!$%&\'+/=?^`{|}~-]+)@(([a-z0-9-]+.?)[a-z0-9-_]+).[a-z]{2,}$/i,$mail))*/ && (strlen($mdp) >= 8) && ($mdp == $confirm_mdp))
 		{
@@ -146,8 +150,10 @@ class MemberController
 	public function mdpUpdate()
 	{
 		$token = $_POST['data_token'];
-		$mdp = $_POST['data_mdp'];
-		$confirm = $_POST['data_confirm'];
+		$data_mdp = $_POST['data_mdp'];
+		$data_confirm = $_POST['data_confirm'];
+		$mdp = trim($data_mdp);
+		$confirm = trim($data_confirm);
 		
 		if((strlen($mdp) >= 8) && ($mdp == $confirm))
 		{

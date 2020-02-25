@@ -6,21 +6,6 @@
 		<img src="../gallery/<?php echo $_SESSION['banner']; ?>" class="banner nav_picture" alt="banniere"/>
 	</div>
 	<div id="picture_user" data-category="picture" class="block_nav_picture index_1">
-			<?php
-			$picture = "avatar_default.png";
-			$numberPictures = 0;
-			while($datas = $getPictures->fetch())
-			{
-				$tab_pictures[] = $datas;
-			}
-			$numberPictures = count($tab_pictures);
-			if($numberPictures != 0)
-			{
-				$nb = rand(0, ($numberPictures - 1));
-				$picture = $tab_pictures[$nb]['picture'];
-			}
-			
-			?>
 			<img src="../gallery/<?php echo $picture; ?>" class="nav_picture" alt="picture"/>
 	</div>
 	<div id="block_gallery">
@@ -54,27 +39,24 @@
 					<p id="nameFile"></p>
 				</div>
 				<div>
-					<label for="file_title">Choisissez une titre (facultatif) : </label><br/>
-					<input type="text" id="file_title" class="inputs_profil" name="file_title"/>
-					<br/>
-					<label for="file_description">Descrivez votre image (facultatif) : </label><br/>
-					<textarea id="file_description"  class="inputs_profil" name="file_description"></textarea>
-					<br/>
 					<label for="file_category">Choisissez la catégorie de votre image : </label><br/>
-					<select id="file_category" class="inputs_profil" name="file_category">
+					<select id="file_category" class="inputs_profil warning_border" name="file_category">
 						<option value=""></option>
 						<option value="avatar">Avatar</option>
 						<option value="picture">Image</option>
 						<option value="banner">Bannière</option>
-					</select>
+					</select><br/>
+					<label for="file_title">Choisissez un titre (facultatif) : </label><br/>
+					<input type="text" id="file_title" class="inputs_profil" name="file_title"/>
+					<br/>
+					<label for="file_description">Descrivez votre image (facultatif) : </label><br/>
+					<textarea id="file_description"  class="inputs_profil" name="file_description"></textarea>					
 				</div>
+				<span id="error_add_picture" class="warning_background">Aucune image n'a été sélectionnée</span>
 				<input type="submit" id="submit_file" class="btn_profil" name="submit_file" value="Ajoutez cette image à votre galerie"/>
 			</form>
 		</div>
 		<div class="zones">
-			<div id="zone_blog">
-				<span id="button_generate_blog" class="btn_profil">Activer son espace</span>
-			</div>
 			<div id="updatePassword">
 					<span id="button_form_mdp" class="btn_profil">Modifier votre mot-de-passe</span>
 					<div id="form_old_mdp">
@@ -94,3 +76,5 @@
 		</div>
 	</div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="public/js/profil.js"></script>

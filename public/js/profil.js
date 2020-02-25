@@ -2,11 +2,12 @@ const profil =
 {
 	blocksNavPictures : $(".block_nav_picture"),
 	picture : $('.select_picture'),
+	thisPicture : "",
 	addFile : $('#gallery_file'),
+	fileCategory : $("#file_category"),
 	btnModifyPicture : $("#btn_modify_picture"),
 	selectPictureFile : "",
 	selectPictureCategory : "",
-	selectNumPicture : "",
 	btnDeletePicture : $("#btn_delete_picture"),
 	btnDisplayFormOldMdp : $("#button_form_mdp"),
 	formOldMdp : $("#form_old_mdp"),
@@ -21,6 +22,7 @@ const profil =
 		$(this.blocksNavPictures).on("click", this.showPictures);
 		$(this.picture).on("click", this.selectPicture);
 		$(this.addFile).on("change", this.file.bind(this));
+		$(this.fileCategory).on("change", this.category.bind(this));
 		$(this.btnModifyPicture).on("click", this.updatePicture.bind(this));
 		$(this.btnDeletePicture).on("click", this.deletePicture.bind(this));
 		$(this.btnDisplayFormOldMdp).on("click", this.displayFormOldMdp.bind(this));
@@ -32,8 +34,32 @@ const profil =
 	file()
 	{
 		$('#nameFile').text(this.addFile.val());
+		var nameFile = $('#nameFile').text();
+		if(nameFile != "")
+		{
+			$("#error_add_picture").hide();
+			$("#submit_file").show();
+		}
+		else
+		{
+			$("#error_add_picture").show();
+			$("#submit_file").hide();
+		}
 	},
 	
+	category()
+	{
+		var category = $("#file_category").val();
+		if(category != "")
+		{
+			$("#file_category").removeClass("warning_border").addClass("success_border");
+		}
+		else
+		{
+			$("#file_category").removeClass("success_border").addClass("warning_border");
+		}
+	},
+
 	gallery()
 	{
 		var category = "avatar";
@@ -55,20 +81,19 @@ const profil =
 					}
 					if(boucle == 1)
 					{
-						$('#zone_pictures_1').append('<img src="../gallery/'+data[i].picture+'" class="select_picture '+category+'s_css" data-file="'+data[i].picture+'" data-category="'+category+'" alt="'+description+'"/>');
+						$('#zone_pictures_1').append('<img src="../gallery/'+data[i].picture+'" class="select_picture '+category+'s_css" data-file="'+data[i].picture+'" data-category="'+category+'"data-col="'+boucle+'"alt="'+description+'"/>');
 						boucle++;
 					}	
 					else if(boucle == 2)
 					{
-						$('#zone_pictures_2').append('<img src="../gallery/'+data[i].picture+'" class="select_picture '+category+'s_css" data-file="'+data[i].picture+'" data-category="'+category+'" alt="'+description+'"/>');
+						$('#zone_pictures_2').append('<img src="../gallery/'+data[i].picture+'" class="select_picture '+category+'s_css" data-file="'+data[i].picture+'" data-category="'+category+'" data-col = "'+boucle+'" alt="'+description+'"/>');
 						boucle++;
 					}
 					else if(boucle >= 3)
 					{
-						$('#zone_pictures_3').append('<img src="../gallery/'+data[i].picture+'" class="select_picture '+category+'s_css" data-file="'+data[i].picture+'" data-category="'+category+'" alt="'+description+'"/>');
+						$('#zone_pictures_3').append('<img src="../gallery/'+data[i].picture+'" class="select_picture '+category+'s_css" data-file="'+data[i].picture+'" data-category="'+category+'" data-col = "'+boucle+'" alt="'+description+'"/>');
 						boucle = 1;
 					}
-					
 				}	
 				profil.picture = $('.select_picture');
 				$(profil.picture).on("click", profil.selectPicture);
@@ -126,15 +151,15 @@ const profil =
 						}
 						if(boucle == 1)
 						{
-							$('#zone_pictures_1').append('<img src="../gallery/'+data[i].picture+'" class="select_picture '+category+'s_css" data-file="'+data[i].picture+'" data-category="'+category+'" alt="'+description+'"/>');
+							$('#zone_pictures_1').append('<img src="../gallery/'+data[i].picture+'" class="select_picture '+category+'s_css" data-file="'+data[i].picture+'" data-category="'+category+'" data-col = "'+boucle+'" alt="'+description+'"/>');
 						}	
 						else if(boucle == 2)
 						{
-							$('#zone_pictures_2').append('<img src="../gallery/'+data[i].picture+'" class="select_picture '+category+'s_css" data-file="'+data[i].picture+'" data-category="'+category+'" alt="'+description+'"/>');
+							$('#zone_pictures_2').append('<img src="../gallery/'+data[i].picture+'" class="select_picture '+category+'s_css" data-file="'+data[i].picture+'" data-category="'+category+'" data-col = "'+boucle+'" alt="'+description+'"/>');
 						}
 						else if(boucle >= 3)
 						{
-							$('#zone_pictures_3').append('<img src="../gallery/'+data[i].picture+'" class="select_picture '+category+'s_css" data-file="'+data[i].picture+'" data-category="'+category+'" alt="'+description+'"/>');
+							$('#zone_pictures_3').append('<img src="../gallery/'+data[i].picture+'" class="select_picture '+category+'s_css" data-file="'+data[i].picture+'" data-category="'+category+'" data-col = "'+boucle+'" alt="'+description+'"/>');
 							boucle = 0;
 						}
 						
@@ -150,9 +175,9 @@ const profil =
 	{				
 		profil.selectPictureFile = $(this).data('file');
 		profil.selectPictureCategory = $(this).data('category');
-		profil.selectNumPicture = $(this).index();		
+		profil.thisPicture = $(this);
 		profil.picture.css('borderColor', 'black');
-		$(this).css('borderColor', 'yellow');
+		$(this).css('borderColor', 'yellow');	
 	},
 	
 	updatePicture()
@@ -185,8 +210,6 @@ const profil =
 	deletePicture()
 	{		
 		var picture = profil.selectPictureFile;
-		var pictureImg = profil.picture;
-		var numPicture = profil.selectNumPicture;	
 		var category = profil.selectPictureCategory;
 		if(picture != "")
 		{
@@ -209,14 +232,14 @@ const profil =
 							$('#error_picture').text("Vous ne pouvez pas supprimer cette image.");
 						break;
 						case 2:
-							pictureImg[numPicture].remove();
+							profil.thisPicture.remove();
 						break;
 						case 3:
-							pictureImg[numPicture].remove();
+							profil.thisPicture.remove();
 							$(".avatar").attr("src", "../gallery/avatar_default.png");
 						break;
 						case 4:
-							pictureImg[numPicture].remove();
+							profil.thisPicture.remove();
 							$(".banner").attr("src", "../gallery/banner_default.png");
 						break;
 					}
@@ -360,3 +383,4 @@ const profil =
 	}
 	
 }	
+profil.init();

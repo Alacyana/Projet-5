@@ -16,8 +16,10 @@ class ProfilController
 			{
 				if($category != "")
 				{
-					$title = $_POST['file_title'];
-					$description = $_POST['file_description'];
+					$data_title = $_POST['file_title'];
+					$data_description = $_POST['file_description'];
+					$title = trim($data_title);
+					$description = trim($data_description);
 					if($category == "avatar")
 					{
 						$size = "1000000";
@@ -75,6 +77,18 @@ class ProfilController
 		$getAvatars = $profilManager->getPictures($category);
 		$category = "picture";
 		$getPictures = $profilManager->getPictures($category);
+		$picture = "avatar_default.png";
+			$numberPictures = 0;
+			while($datas = $getPictures->fetch())
+			{
+				$tab_pictures[] = $datas;
+			}
+			$numberPictures = count($tab_pictures);
+			if($numberPictures != 0)
+			{
+				$nb = rand(0, ($numberPictures - 1));
+				$picture = $tab_pictures[$nb]['picture'];
+			}
 		
 		require('view/sampleViewTop.php');
 		
@@ -85,7 +99,6 @@ class ProfilController
 		else
 		{
 			require('view/deconnectView.php');
-			//header('Refresh: 5; URL: http://lecture.nexus-archeage.fr');
 		}
 		require('view/sampleViewBot.php');	
 	}

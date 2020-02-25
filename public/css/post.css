@@ -1,0 +1,143 @@
+#title_post 
+{
+    text-align: center;
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#subtitle_post 
+{
+    display: block;
+    text-align: center;
+    font-size: 1.4em;
+    font-style: italic;
+}
+
+#picture_post 
+{
+    text-align: center;
+    display: block;
+}
+
+	#picture_post img 
+	{
+		width: 100%;
+		max-width: 1000px;
+	}
+
+#block_text_post 
+{
+    background-color: aliceblue;
+    display: block;
+    padding: 20px;
+    text-align: justify;
+    font-size: 0.9em;
+    border: solid 2px #8a8a8a;
+}
+
+	#text_post 
+	{
+		display: block;
+	}
+	
+	#date_modification_post 
+	{
+		display: block;
+		margin-top: 15px;
+		text-align: end;
+		color: grey;
+		font-size: 0.8em;
+		font-style: italic;
+	}
+
+#comments_area 
+{
+    background-color: aliceblue;
+    margin: 10px;
+    padding: 10px;
+}
+
+	#comments_post 
+	{
+		display: block;
+		text-align: center;
+		font-size: 1.2em;
+		font-weight: bold;
+		margin: 10px;
+	}
+
+.comments 
+{
+    display: block;
+    width: 80%;
+    background-color: white;
+	padding-top: 10px;
+	margin: 10px 0px;
+}
+
+	.block_pictures_comments 
+	{
+		position: relative;
+		min-height: 240px;
+		width: 400px;
+		display: inline-block;
+		margin-top: -10px;
+	}
+		.block_pictures_comments img 
+		{
+			position: absolute;
+		}
+
+		.banner_comments 
+		{
+			width: 400px;
+			z-index: 1;
+			border: solid 3px black;
+		}
+		
+		.avatar_comments 
+		{
+			width: 100px;
+			z-index: 2;
+			left: 30px;
+			top: 30px;
+			border: solid 2px black;
+		}
+		
+		.pseudos_comm 
+		{
+			position: absolute;
+			z-index: 2;
+			left: 15px;
+			top: -10px;
+			padding: 3px 0px;
+			display: block;
+			width: 130px;
+			text-align: center;
+			font-weight: bold;
+			background-color: rgba(255, 255, 255, 1);
+			border: solid 3px black;
+			border-radius: 25px;
+		}
+		
+		.texts_comm 
+		{
+			vertical-align: top;
+			padding: 10px;
+		}
+		
+		.dates_comm 
+		{
+			display: block;
+			text-align: right;
+			padding: 10px;
+			color: grey;
+			font-size: 0.8em;
+			font-style: italic;
+		}
+
+.inputs_modify_post_space
+{
+	display:none;
+}

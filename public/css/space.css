@@ -12,6 +12,13 @@
     text-align: center;
 }
 
+	#modify_description 
+	{
+		color: orange;
+		font-size: 1.5em;
+		cursor: pointer;
+	}
+
 	#description 
 	{
 		display: inline-block;
@@ -22,13 +29,11 @@
 	#new_description
 	{
 		text-align: center;
+		width: 100%;
+		max-width: 600px;
+		min-width: 200px;
+		padding: 10px;
 	}
-
-.forms_space
-{
-	display:none;
-	width: 80%;
-}
 
 .btn_forms_space
 {
@@ -40,28 +45,47 @@
     border-radius: 5px;
     font-size: 1em;
     font-weight: bold;
+	margin: 10px;
+    display: inline-block;
+}
+
+.form_description
+{
+	display:none;
+}
+
+.forms_space
+{
+	display:none;
 }
 
 #area_pictures_space 
 {
+	display: none;
 	height: 120px;
     overflow-y: auto;
 }
 
 	.pictures_add_post 
 	{
-		max-height: 160px;
 		display: inline-block;
-		width: 100px;
 		text-align: center;
 		vertical-align: middle;
-		border-style: solid;
+		cursor: pointer;
+		width: 200px;
+		height: 110px;
+		
 	}
 	
 		.pictures_add_post img 
 		{
 			max-height: 100px;
 			max-width: 100%;
+		}
+		.pictures_add_post img:hover
+		{
+			max-height: 102px;
+			max-width: 200px;
 		}
 
 #block_posts 
@@ -89,10 +113,31 @@
 	{
 		background-color: #f1f1f1;
 		display: inline-block;
-		width: 400px;
+		width: 90%;
 		vertical-align: top;
 		padding: 10px;
 		margin: 15px
+	}
+	
+	.photo_alternate 
+	{
+		display: block;
+		font-size: 3em;
+		cursor: pointer;
+		color: #464da9;
+	}
+		.photo_alternate:hover
+		{
+			color: #070e71;
+		}
+	
+	#previewPicture 
+	{
+		display: block;
+		margin: auto;
+		padding: 20px;
+		max-width: 80%;
+		max-height: 400px;
 	}
 	
 	#btn_add_post 
@@ -101,7 +146,7 @@
 		margin-top: 100px;
 		background-color: #dadada;
 		border-style: outset;
-		width: 200px;
+		width: 90%;
 		padding: 15px;
 		cursor: pointer;
 	}
@@ -117,11 +162,6 @@
 		min-width: 80%;
 		max-width: 80%;
 	}
-
-
-
-
-
 
 .title_posts 
 {
@@ -166,10 +206,30 @@
 }
 
 
-
-
 .area_posts
 {
 	text-decoration: none;
 	color: black;
+}
+
+
+
+@media (min-width:768px)
+{
+	
+}
+@media (min-width:992px)
+{
+	#btn_add_post 
+	{
+		width: 200px;
+	}
+	.posts_space
+	{
+		width: 400px;
+	}
+}
+@media (min-width:1200px)
+{
+	
 }

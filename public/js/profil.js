@@ -109,6 +109,18 @@ const profil =
 		var categoryBlockPicture = $('#block_pictures').data("category");
 		if(category != categoryBlockPicture)
 		{
+			if(category == "avatar")
+			{
+				$("#category_pictures").text("Avatars");
+			}
+			else if(category == "banner")
+			{
+				$("#category_pictures").text("Bannières");
+			}
+			else if(category == "picture")
+			{
+				$("#category_pictures").text("Autres images");
+			}
 			$('#block_pictures').data("category", category);
 			$('.zone_pictures').text("");
 			$('#error_picture').text("");

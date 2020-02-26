@@ -44,12 +44,13 @@ const space =
 	{
 		$(".forms_space").hide();
 		$(".areas_space").show();
+		$("#btn_add_post").show();
 	},
 	
 	modifyDescription()
 	{	
 		$('#description').hide();
-		$('.form_description').show();
+		$('.form_description').css("display", "inline-block");
 	},
 	
 	updateDescription()
@@ -72,8 +73,8 @@ const space =
 	selectPicture()
 	{
 		space.picture = $(this).data('picture');
-		space.selectPictureSpace.css('borderColor', 'black');
-		$(this).css('borderColor', 'yellow');
+		space.selectPictureSpace.css('border', 'none');
+		$(this).css('borderTop', 'solid 4px yellow');
 	},
 	
 	pastePicture()
@@ -93,6 +94,7 @@ const space =
 	formAddPost()
 	{
 		$('#btn_add_post').hide();
+		$('#area_pictures_space').show();
 		$('#form_add_post').show();
 	},
 	
@@ -133,6 +135,7 @@ const space =
 	showConfirmDeletePost()
 	{
 		$(".forms_space").hide();
+		$("#btn_add_post").show();
 		$(this).next().css({"display":"block"});
 		space.btnsDeletePost.hide();
 	},

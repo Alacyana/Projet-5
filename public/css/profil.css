@@ -1,3 +1,11 @@
+#page_title 
+{
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    font-size: 3em;
+}
+
 .block_nav_picture
 {
 	position: absolute;
@@ -32,6 +40,13 @@
 	margin-top: 280px;
 }
 
+#category_pictures 
+{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #004e9e;
+}
+
 #block_gallery
 {
 	position: relative;
@@ -63,6 +78,7 @@
 		height: 600px;
 		overflow-x: auto;
 		text-align: center;
+		background-color: #f3f3f3;
 	}
 
 		.zone_pictures 

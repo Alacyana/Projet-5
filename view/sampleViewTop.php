@@ -17,6 +17,9 @@
 		<nav>
 			<div id="nav_top" class="navs">
 				<span id="open_nav_left" class="material-icons nav_icons">menu</span>
+				<a id="home" href="http://lecture.nexus-archeage.fr">
+					<span>Accueil</span>
+				</a>				
 				<?php 
 				if (isset($_SESSION['id']))
 				{

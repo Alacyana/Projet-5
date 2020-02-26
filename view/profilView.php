@@ -1,4 +1,5 @@
 ﻿<div id="block_page">
+	<span id="page_title">Votre Profil</span>
 	<div id="avatar_user" data-category="avatar" class="block_nav_picture index_3">
 		<img src="../gallery/<?php echo $_SESSION['avatar'];?>" class="avatar nav_picture" alt="avatar"/>
 	</div>
@@ -9,6 +10,7 @@
 			<img src="../gallery/<?php echo $picture; ?>" class="nav_picture" alt="picture"/>
 	</div>
 	<div id="block_gallery">
+		<span id="category_pictures">Avatars</span>
 		<div id="block_top_gallery_shadow">
 			<div id="top_gallery_shadow" class="shadow_gallery"></div>
 		</div>
@@ -60,15 +62,15 @@
 			<div id="updatePassword">
 					<span id="button_form_mdp" class="btn_profil">Modifier votre mot-de-passe</span>
 					<div id="form_old_mdp">
-						<label for="old_mdp">Entrez votre ancien mot-de-passe :</label>
-						<input type="password" id="old_mdp" class="inputs_profil" name="old_mdp"/>
+						<label for="old_mdp">Entrez votre ancien mot-de-passe :</label><br/>
+						<input type="password" id="old_mdp" class="inputs_profil" name="old_mdp"/><br/>
 						<input type="submit" id="submit_old_mdp" class="btn_profil" name="submit_old_mdp" value="Confirmer"/>
 					</div>
 					<div id="form_new_mdp">
-						<label for="new_mdp">Entrez votre nouveau mot-de-passe :</label>
-						<input type="password" class="champs_new_mdp inputs_profil" id="new_mdp" name="new_mdp"/>
-						<label for="confirm_new_mdp">Confirmez votre nouveau mot-de-passe :</label>
-						<input type="password" class="champs_new_mdp inputs_profil" id="confirm_new_mdp" name="confirm_new_mdp"/>
+						<label for="new_mdp">Entrez votre nouveau mot-de-passe :</label><br/>
+						<input type="password" class="champs_new_mdp inputs_profil" id="new_mdp" name="new_mdp"/><br/>
+						<label for="confirm_new_mdp">Confirmez votre nouveau mot-de-passe :</label><br/>
+						<input type="password" class="champs_new_mdp inputs_profil" id="confirm_new_mdp" name="confirm_new_mdp"/><br/>
 						<input type="submit" id="submit_new_mdp" class="btn_profil" name="submit_new_mdp" value="Confirmer"/>
 					</div>
 					<p id="error_new_mdp"></p>

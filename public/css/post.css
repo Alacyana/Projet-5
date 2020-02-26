@@ -6,12 +6,26 @@
     font-weight: bold;
 }
 
+#btn_modify_post_space 
+{
+	color: orange;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+
 #subtitle_post 
 {
     display: block;
     text-align: center;
     font-size: 1.4em;
     font-style: italic;
+}
+
+#area_pictures_post
+{
+	display: none;
+	height: 120px;
+    overflow-y: auto;
 }
 
 #picture_post 
@@ -31,25 +45,48 @@
     background-color: aliceblue;
     display: block;
     padding: 20px;
-    text-align: justify;
+    text-align: center;
     font-size: 0.9em;
     border: solid 2px #8a8a8a;
 }
 
+	#previewPicturePost
+	{
+		display: block;
+		margin: auto;
+		padding: 20px;
+		max-width: 80%;
+		max-height: 400px;
+	}
+	
 	#text_post 
 	{
 		display: block;
+		text-align: left;
 	}
 	
 	#date_modification_post 
 	{
 		display: block;
-		margin-top: 15px;
+		margin: 15px;
 		text-align: end;
 		color: grey;
 		font-size: 0.8em;
 		font-style: italic;
 	}
+
+.forms_posts_space {
+    display: block;
+    margin-left: 10%;
+    padding: 10px;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    min-height: 25px;
+    min-width: 80%;
+    max-width: 80%;
+}
+
+
 
 #comments_area 
 {
@@ -67,22 +104,25 @@
 		margin: 10px;
 	}
 
+
 .comments 
 {
-    display: block;
-    width: 80%;
+	display: block;
+    width: 100%;
     background-color: white;
-	padding-top: 10px;
-	margin: 10px 0px;
+    padding-top: 10px;
+    margin: 40px 0px;
+    min-height: 250px;
 }
 
 	.block_pictures_comments 
 	{
 		position: relative;
-		min-height: 240px;
-		width: 400px;
+		min-height: 140px;
+		width: 200px;
 		display: inline-block;
 		margin-top: -10px;
+		float: left;
 	}
 		.block_pictures_comments img 
 		{
@@ -91,7 +131,7 @@
 
 		.banner_comments 
 		{
-			width: 400px;
+			display:none;
 			z-index: 1;
 			border: solid 3px black;
 		}
@@ -125,6 +165,8 @@
 		{
 			vertical-align: top;
 			padding: 10px;
+			text-align: justify;
+			display: block;
 		}
 		
 		.dates_comm 
@@ -141,3 +183,38 @@
 {
 	display:none;
 }
+
+
+
+
+@media (min-width:768px)
+{
+	.block_pictures_comments 
+	{
+		min-height: 155px;
+		width: 320px;
+	}
+	.banner_comments 
+	{
+		display: block;
+		width: 300px;
+	}
+}
+@media (min-width:992px)
+{
+	.block_pictures_comments 
+	{
+		min-height: 210px;
+		width: 420px;
+	}
+	
+	.banner_comments 
+	{
+		width: 400px;
+	}
+}
+@media (min-width:1200px)
+{
+	
+}
+

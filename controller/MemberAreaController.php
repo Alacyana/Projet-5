@@ -17,7 +17,7 @@ class MemberController
 		$mdp = trim($data_mdp);
 		$confirm_mdp = trim($data_mdp);
 		
-		if ((strlen($username) > 3) /*&& (preg_match(/^(([a-z0-9!$%&\'+/=?^_`{|}~-]+.?)[a-z0-9!$%&\'+/=?^`{|}~-]+)@(([a-z0-9-]+.?)[a-z0-9-_]+).[a-z]{2,}$/i,$mail))*/ && (strlen($mdp) >= 8) && ($mdp == $confirm_mdp))
+		if ((strlen($username) > 3) && (strlen($mdp) >= 8) && ($mdp == $confirm_mdp))
 		{
 			$memberAreaManager = new \Projet\Model\MemberAreaManager();
 			$verifyUser = $memberAreaManager->verifyUser($username);

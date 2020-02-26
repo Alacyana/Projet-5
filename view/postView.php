@@ -6,7 +6,7 @@
 	<div id="post_area">		
 			<div id="area_pictures_post" class="inputs_modify_post_space">
 				<span class="pictures_add_post" data-picture="none">
-					<img src="" alt="image"/>
+					<img src="public/img/clear.png" alt="image"/>
 				</span>
 <?php
 	while($picturesPost = $getsPictures->fetch())
@@ -19,13 +19,32 @@
 	}
 ?>	
 			</div>
-		<span id="title_post" class="post_space"><?php echo htmlspecialchars($post['title']);?></span>
-	
-			<label for="title_modify_post" class="inputs_modify_post_space">Titre du sujet :</label>
-			<input type="text" id="title_modify_post" class="inputs_modify_post_space"/><br/>
-		<span id="subtitle_post" class="post_space"><?php echo htmlspecialchars($post['subtitle']);?></span>
-			<label for="subtitle_modify_post" class="inputs_modify_post_space">Sous-titre du sujet :</label>
-			<input type="text" id="subtitle_modify_post" class="inputs_modify_post_space"/><br/>
+			
+		<div id="block_text_post">				
+			<span id="title_post" class="post_space"><?php echo htmlspecialchars($post['title']);?></span>
+<?php 
+	if($post['id_member'] == $_SESSION['id'])
+	{
+?>		
+			<span id="btn_modify_post_space" class="material-icons">settings</span>
+<?php 
+	}
+?>		
+			<label for="title_modify_post" class="inputs_modify_post_space">Titre du sujet :</label><br/>
+			<input type="text" id="title_modify_post" class="inputs_modify_post_space forms_posts_space"/><br/>
+			
+			
+			<span id="subtitle_post" class="post_space"><?php echo htmlspecialchars($post['subtitle']);?></span>
+			<label for="subtitle_modify_post" class="inputs_modify_post_space ">Sous-titre du sujet :</label>
+			<input type="text" id="subtitle_modify_post" class="inputs_modify_post_space forms_posts_space"/><br/>
+			
+			
+			
+			
+			
+			
+			
+			
 <?php
 	if($post['picture'] != "")
 	{
@@ -36,25 +55,43 @@
 	}
 ?>
 			<label for="btn_modify_picture_post" class="inputs_modify_post_space">Sélectionnez votre image :</label>
-			<span id="btn_modify_picture_post" class="material-icons inputs_modify_post_space">add_photo_alternate</span><br/>
+			<span id="btn_modify_picture_post" class="material-icons inputs_modify_post_space photo_alternate">add_photo_alternate</span><br/>
 			<img id="previewPicturePost"  class="inputs_modify_post_space" src=""/>
-		<div id="block_text_post">
+
+
+
+
+
+
+
+
+
+
+
 			<span id="text_post" class="post_space"><?php echo nl2br(htmlspecialchars($post['text']));?></span>
 				<label for="text_modify_post" class="inputs_modify_post_space">Contenu du sujet :</label>
-				<textarea id="text_modify_post" class="inputs_modify_post_space"></textarea>
+				<textarea id="text_modify_post" class="inputs_modify_post_space forms_posts_space"></textarea>
+				
+				
+				
+				
+				
 			<span id="date_modification_post">modifié <?php echo htmlspecialchars($post['date_modification']);?></span>
-		</div>
+			
+			
+			
 <?php 
 	if($post['id_member'] == $_SESSION['id'])
 	{
 ?>		
-		<span id="btn_modify_post_space" class="material-icons">settings</span>
-			<span id="modify_post" class="inputs_modify_post_space">Modifier</span>
-			<span class="cancel inputs_modify_post_space">Annuler</span>
-			<span id="error_modify_post_space" class="inputs_modify_post_space"></span>
+		<span id="modify_post" class="inputs_modify_post_space btn_forms_space">Modifier</span>
+		<span class="cancel inputs_modify_post_space btn_forms_space">Annuler</span>
+		<span id="error_modify_post_space" class="inputs_modify_post_space"></span>
 <?php 
 	}
-?>			
+?>	
+		</div>
+		
 	</div>
 	<div id="comments_area">
 		<span id="comments_post">Commentaires</span>
@@ -63,8 +100,8 @@
 	{
 ?>			
 		<div id="form_comms">
-			<textarea id="text_comm"></textarea>
-			<span id="btn_add_comm">Ajouter le commentaire</span>
+			<textarea id="text_comm" class="forms_posts_space"></textarea>
+			<span id="btn_add_comm"  class="btn_forms_space">Ajouter le commentaire</span>
 			<span id="error_add_comm"></span>
 		</div>
 <?php 

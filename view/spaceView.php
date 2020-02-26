@@ -42,9 +42,6 @@
 		
 				<span id="update_description"  class="forms_space form_description btn_forms_space">Modifier</span>
 				<span class="cancel forms_space form_description btn_forms_space">Annuler</span>
-				
-				
-			
 			<span id="error_description"></span>
 <?php 
 		}
@@ -54,9 +51,9 @@
 	if($resultMember['id_member'] == $_SESSION['id'])
 	{
 ?>		
-		<div id="area_pictures_space">
+		<div id="area_pictures_space" class="forms_space">
 				<span class="pictures_add_post" data-picture="none">
-					<img src="" alt="image"/>
+					<img src="public/img/clear.png" alt="image"/>
 				</span>
 <?php
 		while($picturesSpace = $getsPictures->fetch())
@@ -70,14 +67,14 @@
 ?>	
 		</div>
 		<div id="area_add_post">
-			<span id="btn_add_post" class="material-icons areas_space modify_space">add</span>
-			<span id="form_add_post" class="forms_space" style="display:none">
+			<span id="btn_add_post" class="material-icons areas_space">add</span>
+			<span id="form_add_post" class="forms_space">
 				<label for="title_add_post">Titre du sujet :</label><br/>
 				<input type="text" id="title_add_post" class="forms_posts_space"/>
 				<label for="subtitle_add_post">Sous-titre du sujet :</label><br/>
 				<input type="text" id="subtitle_add_post" class="forms_posts_space"/>
 				<label for="picture_add_post">Sélectionnez votre image :</label>
-				<span id="btn_add_picture_post" class="material-icons">add_photo_alternate</span><br/>
+				<span id="btn_add_picture_post" class="material-icons photo_alternate">add_photo_alternate</span><br/>
 				<img id="previewPicture" src=""/>				
 				<label for="text_add_post">Contenu du sujet :</label><br/>
 				<textarea id="text_add_post" class="forms_posts_space"></textarea>
@@ -100,7 +97,7 @@
 				<a href="/?action=post&id_post=<?php echo htmlspecialchars($postsSpace['post_crypt']);?>" class="area_posts">
 					<span class="title_posts"><?php echo htmlspecialchars($postsSpace['title']);?></span>
 					<span class="subtitle_posts"><?php echo htmlspecialchars($postsSpace['subtitle']);?></span>
-					<span class="text_posts"><?php echo nl2br(htmlspecialchars($postsSpace['text']));?></span>
+					<span class="text_posts"><?php echo nl2br(htmlspecialchars(substr($postsSpace['text'], 0, 500).'...'));?></span>
 					<span class="dates_creation"><?php echo htmlspecialchars($postsSpace['date_creation']);?></span>
 				</a>
 <?php 

@@ -1,24 +1,55 @@
 .navs
 {
 	position: fixed;
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 1);
 	color: white;
+	z-index: 5;
 }
 
 #nav_top
 {
-	z-index: 4;
 	width: 100%;
     height: 50px;
 }
 
 	.nav_icons 
 	{
-		font-size: 3em;
+		font-size: 2.5em;
 		margin-left: 10px;
 		cursor: pointer;
 		font-weight: bold;
+		text-decoration: none;
+		color: white;
+		display: inline-block;
+		margin-top: 5px;
 	}
+		.nav_icons:hover
+		{
+			color: yellow;
+		}
+
+#home
+{
+    padding: 5px 30px;
+    color: white;
+    vertical-align: top;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 1.7em;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+	#home:hover
+	{
+		color: yellow;
+	}
+
+#my_space
+{
+	float: right;
+}
 
 #nav_left
 {
@@ -173,10 +204,16 @@
 }
 @media (min-width:992px)
 {
-	#nav_left
+	.navs
 	{
-		width: 200px;
+		position: fixed;
+		background-color: rgba(0, 0, 0, 0.8);
+		color: white;
 	}
+		#nav_left
+		{
+			width: 200px;
+		}
 }
 @media (min-width:1200px)
 {

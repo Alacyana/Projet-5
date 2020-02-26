@@ -28,6 +28,7 @@ const post =
 	{
 		$('.post_space').hide();
 		$('.inputs_modify_post_space').show();
+		$('#btn_modify_picture_post').css("display", "block");
 		$('#title_modify_post').val($('#title_post').text());
 		$('#subtitle_modify_post').val($('#subtitle_post').text());
 		$('#text_modify_post').val($('#text_post').text());
@@ -36,8 +37,8 @@ const post =
 	selectPicture()
 	{
 		post.picture = $(this).data('picture');
-		post.selectPictureSpace.css('borderColor', 'black');
-		$(this).css('borderColor', 'yellow');
+		post.selectPictureSpace.css('border', 'none');
+		$(this).css('borderTop', 'solid 4px yellow');
 	},
 	
 	pastePicture()

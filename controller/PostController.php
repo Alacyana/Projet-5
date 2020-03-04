@@ -1,14 +1,11 @@
 <?php
-namespace Projet\PostController;
-session_start();
-
-require('model/PostManager.php');
+namespace Controller;
 
 class PostController
 {
 	public function post()
 	{
-		$postManager = new \Projet\Model\postManager();
+		$postManager = new \Model\PostManager();
 			$getPost = $postManager->getPost();
 			$post = $getPost->fetch();
 			$getsPictures = $postManager->getsPictures();
@@ -35,7 +32,7 @@ class PostController
 			{
 				$picture = "";
 			}
-			$postManager = new \Projet\Model\postManager();
+			$postManager = new \Model\PostManager();
 				$modifyPost = $postManager->modifyPost($title, $subtitle, $text, $post, $picture);
 			$status = 1;
 		}
@@ -54,7 +51,7 @@ class PostController
 		
 		if($comment != "")
 		{
-			$postManager = new \Projet\Model\postManager();
+			$postManager = new \Model\PostManager();
 				$addComment = $postManager->addComment($comment, $post);
 			$status = 1;
 		}

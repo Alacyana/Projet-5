@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-		rel="stylesheet">
+		rel="stylesheet"/>
 		<link rel="stylesheet" href="public/css/main.css" />
 		<link rel="stylesheet" href="public/css/navigation.css" />
 		<link rel="stylesheet" href="public/css/profil.css" />
@@ -13,8 +13,7 @@
 		<link rel="stylesheet" href="public/css/home.css" />
 		<title>Site de lecture</title>
 	</head>
-	<body>
-		<nav>
+	<body><nav>
 			<div id="nav_top" class="navs">
 				<span id="open_nav_left" class="material-icons nav_icons">menu</span>
 				<a id="home" href="http://lecture.nexus-archeage.fr">
@@ -101,4 +100,4 @@
 				}
 				?>
 			</div>
-		</nav>
+			</nav>

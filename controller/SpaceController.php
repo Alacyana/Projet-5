@@ -1,8 +1,5 @@
 <?php
-namespace Projet\SpaceController;
-session_start();
-
-require('model/SpaceManager.php');
+namespace Controller;
 
 class SpaceController
 {
@@ -11,7 +8,7 @@ class SpaceController
 		$user = $_GET['user'];
 		$id_crypt = sha1('FrtVL/K.J?'.$_SESSION["id"].'g65s4d');
 		$id = $_SESSION['id'];
-		$spaceManager = new \Projet\Model\spaceManager();
+		$spaceManager = new \Model\SpaceManager();
 			$verifySpace = $spaceManager->verifySpace($user);
 			$resultSpace = $verifySpace->fetch();
 			if(!isset($resultSpace["id"]))
@@ -36,7 +33,7 @@ class SpaceController
 	public function descriptionUpdate()
 	{
 		$new_description = $_POST["data_new_description"];
-		$spaceManager = new \Projet\Model\spaceManager();
+		$spaceManager = new \Model\SpaceManager();
 			$updateDescription = $spaceManager->updateDescription($new_description);
 	}
 	
@@ -55,7 +52,7 @@ class SpaceController
 			{
 				$picture = "";
 			}
-			$spaceManager = new \Projet\Model\spaceManager();
+			$spaceManager = new \Model\SpaceManager();
 				$addPost = $spaceManager->addPost($title, $subtitle, $text, $picture);
 			$status = 1;
 		}
@@ -71,7 +68,7 @@ class SpaceController
 		$post = $_POST['data_post'];
 		if(isset($post))
 		{
-			$spaceManager = new \Projet\Model\spaceManager();
+			$spaceManager = new \Model\SpaceManager();
 				$deletePost = $spaceManager->deletePost($post);
 			$status = 1;
 		}

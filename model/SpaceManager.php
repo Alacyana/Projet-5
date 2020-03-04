@@ -1,8 +1,5 @@
 <?php
-namespace Projet\Model;
-session_start();
-
-require_once("model/Manager.php");
+namespace Model;
 
 class SpaceManager extends Manager
 {

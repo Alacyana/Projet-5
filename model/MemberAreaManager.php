@@ -1,8 +1,5 @@
 <?php
-namespace Projet\Model;
-session_start();
-
-require_once("model/Manager.php");
+namespace Model;
 
 class MemberAreaManager extends Manager
 {
@@ -41,10 +38,12 @@ class MemberAreaManager extends Manager
 	
 	public function mailActivation($token)
 	{
+		$dates = $this->datesZone();
 		$db = $this->dbConnect();
-		$request = $db->prepare('UPDATE members SET activation = :activation WHERE token = :token');
+		$request = $db->prepare('UPDATE members SET activation = :activation, date_activation = :date WHERE token = :token');
 		$request->execute(array(
 		'activation' => '1',
+		'date' => $dates,
 		'token' => $token));
 	}
 	

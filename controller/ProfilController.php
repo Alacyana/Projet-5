@@ -1,8 +1,5 @@
 <?php
-namespace Projet\ProfilController;
-session_start();
-
-require('model/ProfilManager.php');
+namespace Controller;
 
 class ProfilController
 {
@@ -51,7 +48,7 @@ class ProfilController
 							if (in_array($extension, $extentions_valid))
 							{
 								$numberPicture = 0;
-								$profilManager = new \Projet\Model\ProfilManager();
+								$profilManager = new \Model\ProfilManager();
 								$verifyPicture = $profilManager->verifyPicture();
 								while($resultPicture = $verifyPicture->fetch())
 								{
@@ -73,7 +70,7 @@ class ProfilController
 			}
 		}
 		$category = "avatar";
-		$profilManager = new \Projet\Model\ProfilManager();
+		$profilManager = new \Model\ProfilManager();
 		$getAvatars = $profilManager->getPictures($category);
 		$category = "picture";
 		$getPictures = $profilManager->getPictures($category);
@@ -106,7 +103,7 @@ class ProfilController
 	public function showPictures()
 	{
 		$category = $_POST['data_category'];
-		$profilManager = new \Projet\Model\ProfilManager();
+		$profilManager = new \Model\ProfilManager();
 		$getPictures = $profilManager->getPictures($category);
 		while($datasPictures = $getPictures->fetch())
 		{
@@ -121,7 +118,7 @@ class ProfilController
 		$category = $_POST['data_category'];
 		if($picture != "")
 		{
-			$profilManager = new \Projet\Model\ProfilManager();
+			$profilManager = new \Model\ProfilManager();
 			$getPictures = $profilManager->getPictures($category);
 			$analyse = 0;
 			while($pictures = $getPictures->fetch())
@@ -163,7 +160,7 @@ class ProfilController
 		$deleteStatus = 0;
 		if(($picture != "") && ($picture != "avatar_default.png") && ($picture != "banner_default.png"))
 		{
-			$profilManager = new \Projet\Model\ProfilManager();
+			$profilManager = new \Model\ProfilManager();
 			$deletePicture = $profilManager->deletePicture($picture);
 			if($category == "avatar")
 			{
@@ -206,7 +203,7 @@ class ProfilController
 		$oldMdp = $_POST['data_oldMdp'];
 		if($oldMdp != "")
 		{
-			$profilManager = new \Projet\Model\ProfilManager();
+			$profilManager = new \Model\ProfilManager();
 			$verifyOldMdp = $profilManager->verifyOldMdp($oldMdp);
 			$resultOldMdp = $verifyOldMdp->fetch();
 			if(isset($resultOldMdp['id']))
@@ -228,14 +225,14 @@ class ProfilController
 		$confirmMdp = $_POST['data_confirm_new_mdp'];
 		if($oldMdp != "")
 		{
-			$profilManager = new \Projet\Model\ProfilManager();
+			$profilManager = new \Model\ProfilManager();
 			$verifyOldMdp = $profilManager->verifyOldMdp($oldMdp);
 			$resultOldMdp = $verifyOldMdp->fetch();
 			if(isset($resultOldMdp['id']))
 			{
 				if((strlen($newMdp) >= 8) && ($newMdp == $confirmMdp))
 				{
-					$profilManager = new \Projet\Model\ProfilManager();
+					$profilManager = new \Model\ProfilManager();
 					$updateMdpProfil = $profilManager->updateMdpProfil($newMdp);
 					$error_update_mdp = 3;
 				}

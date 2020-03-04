@@ -1,10 +1,7 @@
 <?php
-namespace Projet\MemberController;
-session_start();
+namespace Controller;
 
-require('model/MemberAreaManager.php');
-
-class MemberController
+class MemberAreaController
 {
 	public function register()
 	{
@@ -19,7 +16,7 @@ class MemberController
 		
 		if ((strlen($username) > 3) && (strlen($mdp) >= 8) && ($mdp == $confirm_mdp))
 		{
-			$memberAreaManager = new \Projet\Model\MemberAreaManager();
+			$memberAreaManager = new \Model\MemberAreaManager();
 			$verifyUser = $memberAreaManager->verifyUser($username);
 				$resultUser = $verifyUser->fetch();
 					if(isset($resultUser['id']))
@@ -70,7 +67,7 @@ class MemberController
 	
 	public function activation()
 	{
-		$memberAreaManager = new \Projet\Model\MemberAreaManager();
+		$memberAreaManager = new \Model\MemberAreaManager();
 		$token = $_GET['token'];
 		$verifyActivation = $memberAreaManager->verifyActivation($token);
 		$resultActivation = $verifyActivation->fetch();
@@ -81,6 +78,7 @@ class MemberController
 			}
 			else
 			{
+				//ajout de la date d'activation : fait
 				$mailActivation = $memberAreaManager->mailActivation($token);
 				$message_activation = "<p style='color: green'>Votre compte a bien été activé. Redirection en cours...</p>";
 				header ("Refresh: 5;URL=http://lecture.nexus-archeage.fr/");
@@ -95,7 +93,7 @@ class MemberController
 	{
 		$mail= $_POST['data_mail'];
 		$mdp = $_POST['data_mdp'];
-		$memberAreaManager = new \Projet\Model\MemberAreaManager();
+		$memberAreaManager = new \Model\MemberAreaManager();
 		$verifyLogs = $memberAreaManager->verifyLogs($mail, $mdp);
 			$resultLogs = $verifyLogs->fetch();
 				if(isset($resultLogs['id']))
@@ -124,7 +122,7 @@ class MemberController
 	public function mdpForgot()
 	{
 		$mail= $_POST['data_mail'];
-		$memberAreaManager = new \Projet\Model\MemberAreaManager();
+		$memberAreaManager = new \Model\MemberAreaManager();
 		$verifyMail = $memberAreaManager->verifyMail($mail);
 			$resultMail = $verifyMail->fetch();
 				if(isset($resultMail['id']))
@@ -157,7 +155,7 @@ class MemberController
 		
 		if((strlen($mdp) >= 8) && ($mdp == $confirm))
 		{
-			$memberAreaManager = new \Projet\Model\MemberAreaManager();
+			$memberAreaManager = new \Model\MemberAreaManager();
 			$updateMdp = $memberAreaManager->updateMdp($mdp, $token);
 			$errorMdp = false;
 		}

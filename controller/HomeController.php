@@ -1,14 +1,11 @@
 <?php
-namespace Projet\HomeController;
-session_start();
-
-require('model/HomeManager.php');
+namespace Controller;
 
 class HomeController
 {
 	public function home()
 	{
-		$homeManager = new \Projet\Model\homeManager();
+		$homeManager = new \Model\HomeManager();
 			$getSpaces = $homeManager->getSpaces();
 			$getPosts = $homeManager->getPosts();
 		
